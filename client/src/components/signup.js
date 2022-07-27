@@ -1,7 +1,7 @@
 const Signup = ()=>{
     return(
         <>
-        using from vs code
+       <div className="p-3 mb-2 bg-info text-dark">sign up works</div>
         </>
     )
 }

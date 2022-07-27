@@ -1,7 +1,7 @@
 const express = require("express")
 const app= express()
 
-app.listen(3000,(err)=>{
+app.listen(3001,(err)=>{
     if(!err){
         console.log("server started")
     }else{
