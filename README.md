@@ -1,6 +1,9 @@
 # RealEstate
 
 
+//pull changes from git hub
+git pull origin main
+
 //to add all changes to git  
 git add .
 
@@ -9,3 +12,5 @@ git commit -m "first commit"
 
 //to push changes
 git push -u origin main
+
+
