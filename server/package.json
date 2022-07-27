@@ -3,5 +3,26 @@
     "express": "^4.18.1",
     "mongoose": "^6.5.0",
     "nodemon": "^2.0.19"
-  }
+  },
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "dev": "nodemon server.js",
+
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohinoddin/RealEstate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohinoddin/RealEstate/issues"
+  },
+  "homepage": "https://github.com/mohinoddin/RealEstate#readme",
+  "description": ""
 }
