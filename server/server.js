@@ -41,7 +41,10 @@ app.post('/addnewproperty', (req, res) => {
         address: req.body.address,
         landmark: req.body.landmark,
         latitude: req.body.latitude,
-        longitude: req.body.longitude
+        longitude: req.body.longitude,
+        views: 0, // default is 0
+        Status: "Unsold", // default is unsold
+        daysLeft: 10, //Defalt is 10
     })
     newProperty.save().then(() => {
         res.send('property added');

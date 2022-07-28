@@ -142,6 +142,9 @@ const addPropertySchema = mongoose.Schema({
         type: String,
         require: [true, "Please Add Longitude"]
     },
+    views: String,
+    Status: String,
+    daysLeft: String
 });
 
 const PropertyDetailsModel = mongoose.model('PropertyDetailsModel', addPropertySchema);
