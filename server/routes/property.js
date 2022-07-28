@@ -3,7 +3,7 @@ const app = express();
 const jwt = require("jsonwebtoken")
 const router = express.Router();
 const signupModal = require("../models/signup-Modal")
-const addPropertModel = require("../models/addPropertyModel")
+const  PropertyDetailsModel=require("../models/addPropertyModel");
 
 router.get("/", (req, res) => {
 
@@ -15,11 +15,11 @@ router.get("/", (req, res) => {
 
                 if (userData.length) {
                     console.log(user_mail)
-                    res.status(200).send("get property list works")
+                   
 
-                    //          addPropertModel.find().then((propertyData) => {
-                    //     res.status(200).send(propertyData)
-                    // })
+                             PropertyDetailsModel.find().then((propertyData) => {
+                        res.status(200).send(propertyData)
+                    })
 
                 } else {
                     res.status(403).send("No such user exist with the mentioned email id")
@@ -50,11 +50,10 @@ router.get("/:id", (req, res) => {
 
                 if (userData.length) {
                     console.log(user_mail)
-                    res.status(200).send("get property list works")
-
-                    //          addPropertModel.find(_id).then((propertyData) => {
-                    //     res.status(200).send(propertyData)
-                    // })
+                    
+                    PropertyDetailsModel.find({_id:req.params.id}).then((propertyData) => {
+                        res.status(200).send(propertyData)
+                    })
 
                 } else {
                     res.status(403).send("No such user exist with the mentioned email id")
