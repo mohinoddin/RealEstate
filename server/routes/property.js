@@ -3,7 +3,7 @@ const app = express();
 const jwt = require("jsonwebtoken")
 const router = express.Router();
 const signupModal = require("../models/signup-Modal")
-
+const addPropertModel = require("../models/addPropertyModel")
 
 router.get("/", (req, res) => {
 
@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
                     console.log(user_mail)
                     res.status(200).send("get property list works")
 
-                    //          propertyModal.find().then((propertyData) => {
+                    //          addPropertModel.find().then((propertyData) => {
                     //     res.status(200).send(propertyData)
                     // })
 
@@ -52,7 +52,7 @@ router.get("/:id", (req, res) => {
                     console.log(user_mail)
                     res.status(200).send("get property list works")
 
-                    //          propertyModal.find(_id).then((propertyData) => {
+                    //          addPropertModel.find(_id).then((propertyData) => {
                     //     res.status(200).send(propertyData)
                     // })
 
