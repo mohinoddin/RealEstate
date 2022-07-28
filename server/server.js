@@ -1,17 +1,26 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-// const propertyModal = require('./modals/propertSchema')
 const property=require("./routes/property")
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const signupModal = require("./models/signup-Modal")
 
+const { checkExistinguser, generatePasswordHash } = require("./utility")
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs")
 require('dotenv').config(); //for setting environment variables on server
+
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }))
+
+
 
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
+
+//dilip changes
 app.post('/addnewproperty', (req, res) => {
     const newProperty = PropertyDetailsModel({
         propertyType: req.body.propertyType,
@@ -58,6 +67,8 @@ app.post('/addnewproperty', (req, res) => {
     }).catch(err => console.log(err));
 });
 
+
+//starting the server
 app.listen(3001,(err)=>{
     if(!err){
         console.log("server started")
@@ -66,6 +77,8 @@ app.listen(3001,(err)=>{
     }
 })
 
+
+//mongo db connection
 const mongoDB =process.env.ATLAS_URI;
 mongoose.connect(mongoDB, {}).then((res) => {
     console.log("connected to db")
@@ -74,8 +87,54 @@ mongoose.connect(mongoDB, {}).then((res) => {
 })
 
 
+//mohin changes
 app.get('/',(req,res)=>{
   res.send("base route")
 })
 
-app.use("/getProperty",property)
+app.use("/getProperty",property);
+
+
+//thrinath changes
+
+app.post("/signup", async (req, res) => {
+    if (await checkExistinguser(req.body.email)) {
+        res.status(200).send("email already exist")
+    } else {
+        generatePasswordHash(req.body.password).then((passwordHash) => {
+            signupModal.create({ email: req.body.email, password:passwordHash }).then((data) => {
+                res.status(200).send("user signedup sucessfully")
+            }).catch((err) => {
+                res.status(400).send(err.message)
+            })
+
+        })
+        
+    }
+})
+
+app.post("/login",(req,res)=>{
+    console.log("1")
+    signupModal.find({ email: req.body.email }).then((userData) => {
+        console.log(userData)
+        if (userData.length) {
+            bcrypt.compare(req.body.password, userData[0].password).then((val) => {
+                if (val) {
+                    const authToken = jwt.sign(userData[0].email,process.env.SECRET_KEY);
+                    console.log(1)
+                    res.status(200).send({ authToken });
+                } else {
+                    res.status(400).send("invalid password")
+                }
+            })
+        } else {
+            res.status(400).send("unauthorized user")
+        }
+    })
+})
+
+
+app.post("/logout",(req,res)=>{
+    authToken=""
+    res.status(200).send("loggedout sucessfully")
+})

@@ -29,7 +29,7 @@ router.get("/", (req, res) => {
                 res.status(403).send(err.message)
             })
         } catch (err) {
-            res.status(403).send("User not authorized", err)
+            res.status(500).send("User not authorized")
         }
 
     } else {
@@ -64,7 +64,7 @@ router.get("/:id", (req, res) => {
                 res.status(403).send(err.message)
             })
         } catch (err) {
-            res.status(403).send("User not authorized", err)
+            res.status(500).send("User not authorized")
         }
 
     } else {
