@@ -6,6 +6,8 @@ const property=require("./routes/property")
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+require('dotenv').config(); //for setting environment variables on server
+
 
 app.listen(3001, (err) => {
     if (!err) {
@@ -15,7 +17,8 @@ app.listen(3001, (err) => {
     }
 })
 
-const mongoDB = "mongodb+srv://RealEstate:RealEstate@cluster0.gdir3.mongodb.net/property_dtls?retryWrites=true&w=majority";
+const mongoDB = process.env.ATLAS_URL;
+
 mongoose.connect(mongoDB, {}).then((res) => {
     console.log("connected to db")
 }).catch((err) => {

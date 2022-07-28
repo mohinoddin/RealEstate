@@ -3,7 +3,7 @@ const app = express();
 
 const router = express.Router();
 
-router.get("/getAllProperty", (req, res) => {
+router.get("/", (req, res) => {
 
     // propertyModal.find().sort({ _id: -1 }).then((propertyData) => {
     //     res.status(200).send(propertyData)
@@ -14,7 +14,7 @@ router.get("/getAllProperty", (req, res) => {
 })
 
 
-router.get("/getProperty/:id", (req, res) => {
+router.get("/:id", (req, res) => {
 
     //     propertyModal.find(_id).then((propertyData) => {
     //        res.status(200).send(propertyData)
