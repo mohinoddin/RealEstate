@@ -17,9 +17,7 @@ app.listen(3001, (err) => {
     }
 })
 
-const mongoDB = process.env.ATLAS_URI;
-
-
+const mongoDB =process.env.ATLAS_URI;
 mongoose.connect(mongoDB, {}).then((res) => {
     console.log("connected to db")
 }).catch((err) => {
