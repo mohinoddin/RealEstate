@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const jwt = require("jsonwebtoken")
 const router = express.Router();
-const signupModal = require("../modal/signup-Modal")
+const signupModal = require("../models/signup-Modal")
 
 
 router.get("/", (req, res) => {
