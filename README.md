@@ -14,3 +14,10 @@ git commit -m "first commit"
 git push -u origin main
 
 
+//checkout branch 
+git checkout -b <branchname> main
+
+//push to branch
+git push -u origin <branchname>
+
+
