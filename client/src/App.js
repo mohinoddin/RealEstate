@@ -1,4 +1,6 @@
-import {BrowserRouter, Route, Routes } from 'react-router-dom';
+import Signup from "./components/signup";
+import Signin from "./components/signin";
+import {BrowserRouter,Routes,Route} from "react-router-dom"
 import './App.css';
 import PropertyView from './components/PropertyView';
 import AddProperty from './components/AddProperty';
@@ -10,13 +12,15 @@ function App() {
 
       <BrowserRouter>
       <Routes>
-            <Route path="/" element={<PropertyView/>}></Route>
-           
+            <Route path="/" element={<Signin/>}></Route>
+             <Route path="/signup" element={<Signup/>}></Route> 
+            <Route path="/listproperty" element={<PropertyView/>}></Route>
             <Route path="/addproperty" element={<AddProperty/>}></Route>        
           </Routes>
       </BrowserRouter>
      
     </div>
+
   );
 }
 

@@ -2,8 +2,13 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const property=require("./routes/property")
+
+
+
+
 const signupModal = require("./models/signup-Modal");
 const  PropertyDetailsModel=require("./models/addPropertyModel");
+
 const { checkExistinguser, generatePasswordHash } = require("./utility")
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs")
@@ -26,6 +31,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+app.use(cors())
 
 
 //dilip changes
@@ -121,7 +127,7 @@ app.post("/signup", async (req, res) => {
     }
 })
 
-app.post("/login",(req,res)=>{
+app.post("/signin",(req,res)=>{
     console.log("1")
     signupModal.find({ email: req.body.email }).then((userData) => {
         console.log(userData)
@@ -130,7 +136,7 @@ app.post("/login",(req,res)=>{
                 if (val) {
                     const authToken = jwt.sign(userData[0].email,process.env.SECRET_KEY);
                     console.log(1)
-                    res.status(200).send({ authToken });
+                    res.status(200).send({ authToken} );
                 } else {
                     res.status(400).send("invalid password")
                 }

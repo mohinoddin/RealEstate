@@ -16,6 +16,8 @@ router.get("/", (req, res) => {
         res.status(200).send(propertyData)
     })
 
+      
+
     // if (req.headers.authorization) {
 
     //     try {
