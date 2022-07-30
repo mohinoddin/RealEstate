@@ -2,8 +2,12 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const property=require("./routes/property")
-const signupModal = require("./models/signup-Modal")
+
 const cors=require("cors")
+
+
+const signupModal = require("./models/signup-Modal");
+const  PropertyDetailsModel=require("./models/addPropertyModel");
 
 const { checkExistinguser, generatePasswordHash } = require("./utility")
 const jwt = require("jsonwebtoken");
