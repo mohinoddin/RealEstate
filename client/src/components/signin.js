@@ -32,7 +32,9 @@ const Signin = () => {
             data: signindata
         }).then((data) => {
             console.log("1")
-            navigate("/dummy")
+            localStorage.setItem("authorization", data.data.authToken);
+
+            navigate("/listproperty")
             console.log(data)
         }).catch((err) => {
             console.log(err)

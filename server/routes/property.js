@@ -5,36 +5,48 @@ const router = express.Router();
 const signupModal = require("../models/signup-Modal")
 const  PropertyDetailsModel=require("../models/addPropertyModel");
 
+
+
+
+
 router.get("/", (req, res) => {
 
-    if (req.headers.authorization) {
 
-        try {
-            user_mail = jwt.verify(req.headers.authorization, process.env.SECRET_KEY);
-            signupModal.find({ email: user_mail }).then((userData) => {
+    PropertyDetailsModel.find().then((propertyData) => {
+        res.status(200).send(propertyData)
+    })
 
-                if (userData.length) {
-                    console.log(user_mail)
+      
+
+    // if (req.headers.authorization) {
+
+    //     try {
+    //         user_mail = jwt.verify(req.headers.authorization, process.env.SECRET_KEY);
+    //         signupModal.find({ email: user_mail }).then((userData) => {
+
+    //             if (userData.length) {
+    //                 console.log(user_mail)
                    
 
-                             PropertyDetailsModel.find().then((propertyData) => {
-                        res.status(200).send(propertyData)
-                    })
+    //                          PropertyDetailsModel.find().then((propertyData) => {
+    //                     res.status(200).send(propertyData)
+                        
+    //                 })
 
-                } else {
-                    res.status(403).send("No such user exist with the mentioned email id")
-                }
+    //             } else {
+    //                 res.status(403).send("No such user exist with the mentioned email id")
+    //             }
 
-            }).catch((err) => {
-                res.status(403).send(err.message)
-            })
-        } catch (err) {
-            res.status(500).send("User not authorized")
-        }
+    //         }).catch((err) => {
+    //             res.status(403).send(err.message)
+    //         })
+    //     } catch (err) {
+    //         res.status(500).send("User not authorized")
+    //     }
 
-    } else {
-        res.status(200).send("header is empty please add header")
-    }
+    // } else {
+    //     res.status(200).send("header is empty please add header")
+    // }
 
 
 })
@@ -42,33 +54,43 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
 
-    if (req.headers.authorization) {
 
-        try {
-            user_mail = jwt.verify(req.headers.authorization, process.env.SECRET_KEY);
-            signupModal.find({ email: user_mail }).then((userData) => {
+    PropertyDetailsModel.find({_id:req.params.id}).then((propertyData) => {
+        res.status(200).send(propertyData)
+    })
 
-                if (userData.length) {
-                    console.log(user_mail)
+    // if (req.headers.authorization) {
+
+    //     try {
+    //         user_mail = jwt.verify(req.headers.authorization, process.env.SECRET_KEY);
+    //         signupModal.find({ email: user_mail }).then((userData) => {
+
+    //             if (userData.length) {
+    //                 console.log(user_mail)
                     
-                    PropertyDetailsModel.find({_id:req.params.id}).then((propertyData) => {
-                        res.status(200).send(propertyData)
-                    })
+    //                 PropertyDetailsModel.find({_id:req.params.id}).then((propertyData) => {
+    //                     res.status(200).send(propertyData)
+    //                 //   if(propertyData.length) {
+    //                 //      res.status(200).send(propertyData)
+    //                 //     }else{
+    //                 //     res.status(203).send("No such post exist")
+    //                 //    }
+    //                 })
 
-                } else {
-                    res.status(403).send("No such user exist with the mentioned email id")
-                }
+    //             } else {
+    //                 res.status(403).send("No such user exist with the mentioned email id")
+    //             }
 
-            }).catch((err) => {
-                res.status(403).send(err.message)
-            })
-        } catch (err) {
-            res.status(500).send("User not authorized")
-        }
+    //         }).catch((err) => {
+    //             res.status(403).send(err.message)
+    //         })
+    //     } catch (err) {
+    //         res.status(500).send("User not authorized")
+    //     }
 
-    } else {
-        res.status(200).send("header is empty please add header")
-    }
+    // } else {
+    //     res.status(200).send("header is empty please add header")
+    // }
 
 })
 
