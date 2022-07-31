@@ -43,7 +43,7 @@ app.post('/addnewproperty', (req, res) => {
         propertyDiscription: req.body.propertyDiscription,
         negotiable: req.body.negotiable,
         ownership: req.body.ownership,
-        propertApproved: req.body.propertApproved,
+        propertyApproved: req.body.propertApproved,
         bankLoan: req.body.bankLoan,
         length: req.body.length,
         breadth: req.body.breadth,
@@ -76,8 +76,9 @@ app.post('/addnewproperty', (req, res) => {
         Status: "Unsold", // default is unsold
         daysLeft: 10, //Defalt is 10
     })
-    newProperty.save().then(() => {
-        res.send('property added');
+    newProperty.save().then((data) => {
+        console.log('Property Added')
+        res.redirect('/listporperty');
     }).catch(err => console.log(err));
 });
 
