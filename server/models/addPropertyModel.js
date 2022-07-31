@@ -25,7 +25,7 @@ const addPropertySchema = mongoose.Schema({
         type: String,
         require: [true, "Please Select Ownership Type"]
     },
-    propertApproved: {
+    propertyApproved: {
         type: String,
         require: [true, "Please Select Property Approved Type"]
     },
