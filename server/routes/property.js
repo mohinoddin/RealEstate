@@ -52,12 +52,32 @@ router.get("/", (req, res) => {
 })
 
 
-router.get("/:id", (req, res) => {
+router.get("/search/:id", (req, res) => {
+
+// const {q}=req.query;
+// console.log(q.length)
+// if(q!==undefined || q.length!==0){
+//     PropertyDetailsModel.find({_id:q}).then((propertyData) => {
+//         res.status(200).send(propertyData)
+//     })
+
+// }else{
+//     console.log("error occured")
+// }
+
+
+
 
 
     PropertyDetailsModel.find({_id:req.params.id}).then((propertyData) => {
+        console.log(propertyData)
         res.status(200).send(propertyData)
+    }).catch(err=>{
+        console.log("error occured")
+        res.status(400).send("no id matching with the entered id")
     })
+
+
 
     // if (req.headers.authorization) {
 

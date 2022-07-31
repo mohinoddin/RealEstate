@@ -2,6 +2,18 @@
     flex: 1;
 }
 
+.actiontxt{
+    margin-right: 30px !important;
+}
+.ppdidhead{
+    width: 200px !important;
+}
+.ppdidtxt{
+    
+    width: 200px !important;
+    margin-left: 20px !important;
+   
+}
 .searchbtn{
     height: 64px;
     background: #F5F5F5;
@@ -74,7 +86,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 20px;
 line-height: 25px; */
-width: 100px;
+width: 80px;
 color: #284E91;
 margin-left: 10px;
 
@@ -90,31 +102,31 @@ margin-left: 10px;
     align-items: center;
     column-gap: 1px;
     margin-right: 42px;
+    border-radius:25px;
 }
 
 .tabledata{
     display: flex;
     flex-direction: row;
     
-    
+    border-radius:25px;
     margin-right: 42px;
     height: 65px;
     margin-top: 30px;
     align-items: center;
 
 background: #FFFFFF;
-overflow: auto;
+
 column-gap: 1px;
 }
 
 .tdtext{
     margin-left: 10px;
-    width: 100px;
+    width: 80px;
 }
 
-.tabledata1{
-    display: flex;
-    flex-direction: row;
+.tdmobile{
+    margin-right: 10px;
 }
 
 .propertycontainer{
@@ -132,6 +144,8 @@ column-gap: 1px;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 31px;
+    margin-left: 42px;
+    margin-right: 42px;
 }
 
 .actionbtn{
@@ -140,155 +154,5 @@ column-gap: 1px;
     column-gap: 5px;
     justify-content: center;
 }
-/* 
-.ppdid{
-    position: absolute;
-left: 24.82%;
-right: 71.62%;
-top: 25.65%;
-bottom: 72.04%;
 
-font-family: 'Source Sans Pro';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 25px;
-
-color: #284E91;
-}
-
-
-.images{
-    position: absolute;
-left: 33.4%;
-right: 63.35%;
-top: 25.65%;
-bottom: 72.04%;
-
-font-family: 'Source Sans Pro';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 25px;
-
-color: #284E91;
-}
-
-.property{
-    position: absolute;
-left: 40.82%;
-right: 54.62%;
-top: 25.65%;
-bottom: 72.04%;
-
-font-family: 'Source Sans Pro';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 25px;
-
-color: #284E91;
-}
-
-.contacts{
-    
-position: absolute;
-left: 48.53%;
-right: 47.35%;
-top: 25.65%;
-bottom: 72.04%;
-
-font-family: 'Source Sans Pro';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 25px;
-
-color: #284E91;
-
-}
-
-.area{
-    position: absolute;
-left: 60.17%;
-right: 37.46%;
-top: 25.65%;
-bottom: 72.04%;
-
-font-family: 'Source Sans Pro';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 25px;
-
-color: #284E91;
-}
-
-
-.views{
-    position: absolute;
-left: 68.26%;
-right: 28.74%;
-top: 25.65%;
-bottom: 72.04%;
-
-font-family: 'Source Sans Pro';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 25px;
-
-color: #284E91;
-}
-
-
-.status{
-    
-    position: absolute;
-    left: 74.81%;
-    right: 21.88%;
-    top: 25.65%;
-    bottom: 72.04%;
-    
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 25px;
-    
-    color: #284E91;
-
-}
-
-.daysleft{
-    position: absolute;
-left: 83.87%;
-right: 11.38%;
-top: 25.65%;
-bottom: 72.04%;
-
-font-family: 'Source Sans Pro';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 25px;
-
-color: #284E91;
-}
-
-.action{
-    position: absolute;
-left: 91.72%;
-right: 4.9%;
-top: 25.65%;
-bottom: 72.04%;
-
-font-family: 'Source Sans Pro';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 25px;
-
-color: #284E91;
-}  */
 
