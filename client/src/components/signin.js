@@ -26,6 +26,7 @@ const Signin = () => {
             url: "http://localhost:3001/signin",
             method: "POST",
             headers: {
+                
 
             },
             data: signindata
@@ -35,9 +36,11 @@ const Signin = () => {
             if(res.data.authToken.length>0){
                 alert(`${signindata.email} signed in sucessfully`) 
                   
-            navigate("/listproperty")
+                navigate("/listproperty")
             }
-    
+            
+         
+
         }).catch((err) => {
             alert(err.response.data)
             if(err.response.data==="email not exist please signup"){
