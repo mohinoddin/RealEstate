@@ -7,17 +7,21 @@ import SearchRes from './SerachRes';
 const PropertyView = ()=>{
 
     const [property, setProperty] = useState([]);
+    const authToken = localStorage.getItem("authorization");
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("http://localhost:3001/getProperty/"); /////fetching data through server
+      const response = await fetch("http://localhost:3001/getProperty/",{
+        headers: {
+            authorization: authToken
+        }}); /////fetching data through server
       console.log(response)
       const data = await response.json(); /////converting fetched data to json file extention
       setProperty(data);
       // console.log(data);
     }
     fetchData()
-  }, [])
+  }, [authToken])
    
   console.log(property)
 
