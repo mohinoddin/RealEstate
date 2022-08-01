@@ -58,7 +58,7 @@ const Signin = () => {
                 }</button>
                 </div>
                 <button className="signin" onClick={handleLogin}>Sign In</button>
-                <p className="blue" onClick={naviSignup}>Sign up</p>
+                <p className="mukku" onClick={naviSignup}>Sign up</p>
                 </div>
                 
              {/* </form> */}

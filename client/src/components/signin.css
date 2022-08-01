@@ -93,6 +93,15 @@
     margin-left: -82px;
     margin-top: 4px;
 }
+.mukku{
+  
+    margin-right:auto;
+    font-weight: bolder;
+    color: #4C57B6;
+    cursor: pointer; 
+    margin-left: 25px;
+    
+}
 .pandu{
     margin-top: 25px;
     margin-bottom: 40px;
