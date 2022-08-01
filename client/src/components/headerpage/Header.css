@@ -11,6 +11,8 @@
     .dropdown {
         position: relative;
         display: inline-block;
+        font-size: 20px;
+        color: #B4B4C6;
       }
       
       .dropdown-content {

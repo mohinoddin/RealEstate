@@ -25,7 +25,7 @@ const PropertyList = ( {propertydetails} )=>{
         
             <th className="thtext">Status</th>
       
-            <th className="thtext">Days Left</th>
+            <th className="thtext thdayleft">Days Left</th>
        
             <th className="thtext actiontxt">Action</th>
         </tr>
@@ -42,7 +42,7 @@ const PropertyList = ( {propertydetails} )=>{
         <td className="tdtext">{propertydata.totalArea}</td>
         <td className="tdtext">{propertydata.views}</td>
         <td className="tdtext tdstatus" style={soldstyle}>{propertydata.Status}</td>
-        <td className="tdtext">{propertydata.daysLeft}</td>
+        <td className="tdtext tddays">{propertydata.daysLeft}</td>
         <td className="tdtext">
 
           <div className="actionbtn">
