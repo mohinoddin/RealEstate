@@ -38,15 +38,12 @@ const Signin = () => {
                  alert(`${signindata.email} signed in sucessfully`)
                 navigate("/listproperty")
             }
-            
-         
-
         }).catch((err) => {
             alert(err.response.data)
             if(err.response.data==="email not exist please signup"){
                 navigate("/signup")
             }
-          
+        
         })
 
     }
