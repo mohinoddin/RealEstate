@@ -9,7 +9,7 @@ const Logout=()=>{
     }
 
     return(
-<button onClick={logoutHandle}>Logou</button>
+<button onClick={logoutHandle}>Logout</button>
     )
 }
 export default Logout
