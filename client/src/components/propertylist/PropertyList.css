@@ -92,6 +92,10 @@ margin-left: 10px;
 
 }
 
+.tdstatus{
+    text-align: center;
+}
+
 .tablehead{
     display: flex;
     flex-direction: row;

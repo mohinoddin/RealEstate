@@ -9,8 +9,11 @@ import GeneralInfo from './generalInfo';
 import LocationInfo from './locationInfo';
 import axios from 'axios'
 import '../assets/styles/style.css';
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
+
+    const navigate = useNavigate();
 
     const [page, setPage] = useState(0);
 
@@ -57,7 +60,9 @@ const Form = () => {
     };
 
     function handleSubmit() {
-        axios.post('http://localhost:3001/addnewproperty', formData).then((res) => console.log(res))
+        axios.post('http://localhost:3001/addnewproperty', formData).then((res) =>{ console.log(res)
+        navigate("/listproperty");
+    })
     }; 
 
     const conditionalComponent = () => {
