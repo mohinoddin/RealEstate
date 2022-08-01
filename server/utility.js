@@ -15,13 +15,13 @@ const checkExistinguser = async (email) => {
 };
 
 const generatePasswordHash = (password) => {
-    console.log(password)
+    
     const salt = 10;
     return new Promise((resolve, reject) => {
         bcrypt.genSalt(salt).then((saltHash) => {
-            console.log(saltHash)
+         
             bcrypt.hash(password, saltHash).then((passwordHash) => {
-                console.log(passwordHash)
+               
                 resolve(passwordHash)
             })
         })

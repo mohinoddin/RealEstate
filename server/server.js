@@ -129,9 +129,9 @@ app.post("/signup", async (req, res) => {
 })
 
 app.post("/signin",(req,res)=>{
-    console.log("1")
+    
     signupModal.find({ email: req.body.email }).then((userData) => {
-        console.log(userData)
+        
         if (userData.length) {
             bcrypt.compare(req.body.password, userData[0].password).then((val) => {
                 if (val) {
