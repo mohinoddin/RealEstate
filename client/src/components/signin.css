@@ -1,14 +1,17 @@
+*{
+    margin:  0 ;
+    padding: 0 ; 
+}
 .logincontainer{
     display: grid;
     place-items: center;
     width: 100%;
-    height:780px;
+   
     background-color: #E1F9F4;
 }
 .logbox{
-    
         width: 564px;
-        height:583px;
+        height:550px;
         margin-top: 80px;
         background-color: white;
         display: inline-block;
@@ -16,10 +19,38 @@
         margin-right: auto;
         border-radius: 10px;
         text-align: center;
-    
+ 
 }
-input{
-    margin: 20px;
+.logologin{
+    color:#4C57B6;
+    Width:92px;
+    Height:18px;
+    font-size:40px;
+    margin-left: 40%;
+    margin-bottom:30px;
+    padding-bottom: 50px;  
+    padding-top: 30px;  
+}
+.paragraph2{
+    margin-bottom:40px
+}
+.logininput1{
+    margin-left: 48px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-right: 45px;
+    height:54px;
+    width: 450px;
+    border: 1px solid #E2E2E2;
+    border-radius: 5px;
+    border-color: rgba(190, 184, 184, 0.5);
+    padding-left: 10px;
+}
+.logininput2{
+    margin-left: 53px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-right: 45px;
     height:54px;
     width: 450px;
     border: 1px solid #E2E2E2;
@@ -36,8 +67,16 @@ input{
     padding-right: 2.8rem;
 }
 .signin{
-    height: 70px;
-    width: 499px
+    height: 54px;
+    width: 469px;
+    margin-bottom:25px ;
+    margin-left: 15px;
+    margin-top: 30px;
+     color: white;
+     background-color: #4C57B6;
+     border: 2px solid;
+     border-radius: 5px; 
+     font-size: 15px;
 }
 .btn{
     padding: 0.6rem;
@@ -50,7 +89,20 @@ input{
     width: 10px;
     color: grey;
 }
-svg{
-    margin-left: -11px;
-    margin-top: 17px;
+.btn{
+    margin-left: -82px;
+    margin-top: 4px;
+}
+.pandu{
+    margin-top: 25px;
+    margin-bottom: 40px;
+    display:flex
+    
+}
+.blue{
+        margin-left: auto;
+        margin-right:auto;
+        font-weight: bolder;
+        color: #4C57B6;
+        cursor: pointer; 
 }

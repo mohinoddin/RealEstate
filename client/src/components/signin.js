@@ -31,10 +31,10 @@ const Signin = () => {
             },
             data: signindata
         }).then((data) => {
-            
-            navigate("/listproperty")
-            console.log(data)
             localStorage.setItem("authorization", data.data.authToken);
+            if(data.data.authToken.length>0){
+            navigate("/listproperty")
+            }
     
         }).catch((err) => {
             console.log(err)
@@ -45,26 +45,28 @@ const Signin = () => {
     return (
         <div className="logincontainer">
             <div className="logbox">
-            <h1>Logo</h1>
-            <p >Enter your credentials to access your account </p>
+            <h1 className="logologin">Logo</h1>
+            <p  className="paragraph2">Enter your credentials to access your account </p>
             {/* <form > */}
                 <div>
-                <input className="password-field" placeholder="Email ID" type="text" onChange={(e) => { setSignindata({ ...signindata, email: e.target.value }) }} />
+                <input className="logininput1" placeholder="Email ID" type="text" onChange={(e) => { setSignindata({ ...signindata, email: e.target.value }) }} />
                 </div>
                 <div className="input-wrapper">
-                <input  className="password-field"placeholder="Password" type={visibility?"text":"password"} onChange={(e) => { setSignindata({ ...signindata, password: e.target.value }) }} />
+                <input  className="logininput2"placeholder="Password" type={visibility?"text":"password"} onChange={(e) => { setSignindata({ ...signindata, password: e.target.value }) }} />
                 <button className="btn" onClick={toggleBtn}>{
                 visibility?<AiOutlineEye/>:<AiOutlineEyeInvisible/>
                 }</button>
                 </div>
-                <button className="signin" onClick={handleLogin}>Sign in</button>
+                <button className="signin" onClick={handleLogin}>Sign In</button>
+                <p className="blue" onClick={naviSignup}>Sign up</p>
                 </div>
                 
              {/* </form> */}
-             
-             
-             
-            <p onClick={naviSignup}>Sign up</p>
+             <div className="pandu">
+             <span >Don't have an account?</span>
+             <p className="blue" onClick={naviSignup}>Sign up</p>
+             </div>
+           
         </div>
     )
 }
