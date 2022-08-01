@@ -13,7 +13,7 @@ const BasicInfo = ({formData, setFormData}) => {
 
     return (
         <form class='form-container'>
-            <label for='propertyType'> Property Type <br/>
+            <label className='input-box' for='propertyType'> Property Type <br/>
                 <select id='propertyType' name='propertyType' onChange={(e) => handleFormData(e)} class='selection-input'>
                     {formData.propertyType === "" ? <option value='Select Property Type'>Select Property Type</option> : 
                     <option value={formData.propertyType}>{formData.propertyType}</option>}
@@ -24,12 +24,12 @@ const BasicInfo = ({formData, setFormData}) => {
                 </select>
             </label><br/>
 
-            <label for='price'>Price <br/>
+            <label className='input-box' for='price'>Price <br/>
                 <input type='text' id='price' name='price' placeholder='Example: 100000'
                  onChange={(e) => handleFormData(e)} class='input' value={'' || formData.price}/>
             </label><br/>
 
-            <label for='propertyAge'>Property Age <br/>
+            <label className='input-box' for='propertyAge'>Property Age <br/>
                 <select id='propertyAge' name='propertyAge' onChange={(e) => handleFormData(e)} class='selection-input'>
                     {formData.propertyAge === "" ? <option value='Select Property Age'>Select Property Age</option> : 
                     <option value={formData.propertyAge}>{formData.propertyAge}</option>}
@@ -40,12 +40,12 @@ const BasicInfo = ({formData, setFormData}) => {
                 </select>
             </label><br/>
 
-            <label for='propertyDiscription'>Property Discription <br/>
+            <label className='input-box' for='propertyDiscription'>Property Discription <br/>
                 <input type='text' id='propertyDiscription' name='propertyDiscription' 
                 onChange={(e) => handleFormData(e)} class='input' value={"" || formData.propertyDiscription}/>
             </label><br/>
 
-            <label for='negotiable'>Negotiable <br/>
+            <label className='input-box' for='negotiable'>Negotiable <br/>
                 <select id='negotiable' name='negotiable' onChange={(e) => handleFormData(e)} class='selection-input'>
                     {formData.negotiable === "" ? <option value='Select Negotiable'>Select Negotiable</option> : 
                     <option value={formData.negotiable}>{formData.negotiable}</option>}
@@ -54,7 +54,7 @@ const BasicInfo = ({formData, setFormData}) => {
                 </select>
             </label><br/>
 
-            <label for='ownership'>Ownership <br/>
+            <label className='input-box' for='ownership'>Ownership <br/>
                 <select id='ownership' name='ownership' onChange={(e) => handleFormData(e)} class='selection-input'>
                     {formData.ownership === "" ? <option value='Select Ownership'>Select Ownership</option> : 
                     <option value={formData.ownership}>{formData.ownership}</option>}
@@ -64,7 +64,7 @@ const BasicInfo = ({formData, setFormData}) => {
                 </select>
             </label><br/>
 
-            <label for='propertyApproved'>Property Approved <br/>
+            <label className='input-box' for='propertyApproved'>Property Approved <br/>
                 <select id='propertyApproved' name='propertyApproved' onChange={(e) => handleFormData(e)} class='selection-input'>
                     {formData.propertyApproved === "" ? <option value='Property Approved'>Property Approved</option> : 
                     <option value={formData.propertyApproved}>{formData.propertyApproved}</option>}
@@ -73,7 +73,7 @@ const BasicInfo = ({formData, setFormData}) => {
                 </select>
             </label><br/>
 
-            <label for='bankLoan'>Bank Loan <br/>
+            <label className='input-box' for='bankLoan'>Bank Loan <br/>
                 <select id='bankLoan' name='bankLoan' onChange={(e) => handleFormData(e)} class='selection-input'>
                     {formData.bankLoan === "" ? <option value='Bank Loan'>Bank Loan</option> : 
                     <option value={formData.bankLoan}>{formData.bankLoan}</option>}
