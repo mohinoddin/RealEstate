@@ -4,13 +4,16 @@ import {BiUser} from  "react-icons/bi";
 const Header = ()=>{
 
     const userId = localStorage.getItem("userid");
+    const userName= userId.split('@')[0]
+
+    console.log(userName)
 
     return(
         <>
 
         <div className='headercontainer'>
        <div className='userid'>USER ID: {userId}</div>
-       <div className='username'><BiUser /> User Name <CgChevronDown /></div>
+       <div className='username'><BiUser /> {userName} <CgChevronDown /></div>
        
 
        </div>
