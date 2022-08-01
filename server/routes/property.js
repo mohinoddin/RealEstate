@@ -31,7 +31,8 @@ router.get("/", (req, res) => {
                 if (userData.length) {
                     console.log(user_mail)
                              PropertyDetailsModel.find().then((propertyData) => {
-                        res.status(200).send(propertyData)
+                               const value= propertyData.reverse()
+                        res.status(200).send(value)
                         
                     })
 
