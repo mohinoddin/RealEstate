@@ -31,9 +31,9 @@ const Signin = () => {
             },
             data: signindata
         }).then((data) => {
-            console.log("1")
-            navigate("/dummy")
             console.log(data)
+            localStorage.setItem("authorization", data.data.authToken);
+    
         }).catch((err) => {
             console.log(err)
         })
@@ -41,9 +41,10 @@ const Signin = () => {
     }
 
     return (
-        <div className="container">
+        <div className="logincontainer">
+            <div className="logbox">
             <h1>Logo</h1>
-            <p>Enter your credentials to access your account </p>
+            <p >Enter your credentials to access your account </p>
             {/* <form > */}
                 <div>
                 <input className="password-field" placeholder="Email ID" type="text" onChange={(e) => { setSignindata({ ...signindata, email: e.target.value }) }} />
@@ -51,12 +52,14 @@ const Signin = () => {
                 <div className="input-wrapper">
                 <input  className="password-field"placeholder="Password" type={visibility?"text":"password"} onChange={(e) => { setSignindata({ ...signindata, password: e.target.value }) }} />
                 <button className="btn" onClick={toggleBtn}>{
-                visibility?<AiOutlineEyeInvisible/>:<AiOutlineEye/>
+                visibility?<AiOutlineEye/>:<AiOutlineEyeInvisible/>
                 }</button>
+                </div>
+                <button className="signin" onClick={handleLogin}>Sign in</button>
                 </div>
                 
              {/* </form> */}
-             <button onClick={handleLogin}>Sign in</button>
+             
              
              
             <p onClick={naviSignup}>Sign up</p>
