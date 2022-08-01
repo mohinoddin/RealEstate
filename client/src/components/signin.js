@@ -21,7 +21,6 @@ const Signin = () => {
     const [signindata, setSignindata] = useState({ email:"", password:"" })
 
     const handleLogin = () => {
-        console.log(signindata)
         axios({
            
             url: "http://localhost:3001/signin",
@@ -30,14 +29,21 @@ const Signin = () => {
 
             },
             data: signindata
-        }).then((data) => {
-            localStorage.setItem("authorization", data.data.authToken);
-            if(data.data.authToken.length>0){
+        }).then((res) => {
+            
+            localStorage.setItem("authorization", res.data.authToken);
+            if(res.data.authToken.length>0){
+                alert(`${signindata.email} signed in sucessfully`) 
+                  
             navigate("/listproperty")
             }
     
         }).catch((err) => {
-            console.log(err)
+            alert(err.response.data)
+            if(err.response.data==="email not exist please signup"){
+                navigate("/signup")
+            }
+          
         })
 
     }
