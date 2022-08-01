@@ -139,11 +139,11 @@ app.post("/signin",(req,res)=>{
                     console.log(1)
                     res.status(200).send({ authToken} );
                 } else {
-                    res.status(400).send("invalid password")
+                    res.status(400).send("invalid password please enter correct password")
                 }
             })
         } else {
-            res.status(400).send("unauthorized user")
+            res.status(400).send("email not exist please signup")
         }
     })
 })
