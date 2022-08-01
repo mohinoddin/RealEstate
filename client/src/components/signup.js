@@ -20,13 +20,12 @@ const Signup = () => {
                 },
                 data: signupData
             }).then((res) => {
-                if(res==="email already exist"){
-                alert("email already exist")
-                }else{
-                    alert(`${signupData.email} signedup sucessfully`)
-                }
+                console.log(res)
+                
+     alert(res.data)
                 navigate("/")
             }).catch((err) => {
+                alert(err.response.data)
                 console.log(err)
             })
         } else {

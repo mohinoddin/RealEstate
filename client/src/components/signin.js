@@ -21,7 +21,6 @@ const Signin = () => {
     const [signindata, setSignindata] = useState({ email:"", password:"" })
 
     const handleLogin = () => {
-        console.log(signindata)
         axios({
            
             url: "http://localhost:3001/signin",
@@ -36,13 +35,18 @@ const Signin = () => {
             if(data.data.authToken.length>0){
                 localStorage.setItem("authorization", data.data.authToken);
                  localStorage.setItem('userid',signindata.email)
+                 alert(`${signindata.email} signed in sucessfully`)
                 navigate("/listproperty")
             }
             
-            console.log(data)
+         
 
         }).catch((err) => {
-            console.log(err)
+            alert(err.response.data)
+            if(err.response.data==="email not exist please signup"){
+                navigate("/signup")
+            }
+          
         })
 
     }
@@ -63,7 +67,7 @@ const Signin = () => {
                 }</button>
                 </div>
                 <button className="signin" onClick={handleLogin}>Sign In</button>
-                <p className="blue" onClick={naviSignup}>Sign up</p>
+                <p className="mukku" onClick={naviSignup}>Sign up</p>
                 </div>
                 
              {/* </form> */}
