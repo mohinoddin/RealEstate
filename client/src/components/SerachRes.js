@@ -1,7 +1,7 @@
 import "./propertylist/PropertyList.css"
 import PropertyList from "./propertylist/PropertyList";
 import { BsSearch ,BsPlus} from "react-icons/bs";
-import AddProperty from './AddProperty'
+import AddProperty from "./addProperty/addProperty";
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 // import axios from "axios";
