@@ -60,10 +60,15 @@ const Form = () => {
     };
 
     function handleSubmit() {
-        axios.post('http://localhost:3001/addnewproperty', formData).then((res) =>{ console.log(res)
-        navigate("/listproperty");
+        axios.post('http://localhost:3001/addnewproperty', formData).then((res) =>{ 
+            console.log(res);
+            navigate("/listproperty");
     })
     }; 
+
+    function handelCancel() {
+        navigate("/listproperty")
+    };
 
     const conditionalComponent = () => {
         switch(page) {
@@ -125,7 +130,7 @@ const Form = () => {
 
     return (
         <>
-        <div className='container'>
+        <div className='add-property-container'>
         <h3 style={{color: "grey", marginLeft: "-575px"}}>
             ADD NEW PROPERTY
         </h3>
@@ -140,9 +145,13 @@ const Form = () => {
             <div style={{textAlign: "left"}}>
             {conditionalComponent()}
             </div>
-            <button className="btn1" onClick={() => setPage(page - 1)}>
-                {page === 0 ? "Cancel" : "Previous"}
-            </button>
+            
+            {/* <button className="btn1" onClick={() => setPage(page - 1)}>
+                {page <= 0 ? "Cancel" : "Previous"}
+            </button> */}
+
+            {page <= 0 ? <button className="btn1" onClick={handelCancel}>Cancel</button> : <button className="btn1" onClick={() => setPage(page - 1)}>Previous</button>}
+
             {page < 3 ? <button className='btn2 btn1' onClick={handlePage}>Save & Continue</button> : <button className='btn2 btn1' onClick={handleSubmit}>Add Property</button>}
         </div>
         </>
