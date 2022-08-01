@@ -8,11 +8,17 @@
         flex-wrap: wrap;
         justify-content: space-between;
         margin: auto;
-        padding: 10px;
         align-content: space-around;
     }
     .form-container {
-        width: 50%;
+        width: 71%;
+        /* margin: auto; */
+        padding: 15px;
+        line-height: 30px;
+        /* border: 1px solid black; */
+        padding: 25px 50px 0px 110px;
+        margin-top: 25px;
+        background-color: white;
     }
 }
 
@@ -26,6 +32,10 @@
     height: 32px;   
 }
 
+.input-box {
+    height: 75px;
+}
+
 .add-property-container {
     text-align: center;
     font-weight: 500;
@@ -34,6 +44,7 @@
     margin: auto;
     /* border: 1px solid black; */
     display: block;
+    padding: 20px;
 }
 
 .btn1 {
@@ -54,6 +65,8 @@
     width: 57%;
     margin: auto;
     height: 32px;
+    background-color: white;
+    margin-top: 20px;
 }
 
 /* .rowC {
