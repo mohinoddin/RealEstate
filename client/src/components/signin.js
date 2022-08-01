@@ -21,47 +21,61 @@ const Signin = () => {
     const [signindata, setSignindata] = useState({ email:"", password:"" })
 
     const handleLogin = () => {
-        console.log(signindata)
         axios({
            
             url: "http://localhost:3001/signin",
             method: "POST",
             headers: {
+                
 
             },
             data: signindata
-        }).then((data) => {
-            console.log("1")
-            localStorage.setItem("authorization", data.data.authToken);
+        }).then((data) => {       
 
-            navigate("/listproperty")
-            console.log(data)
+            if(data.data.authToken.length>0){
+                localStorage.setItem("authorization", data.data.authToken);
+                 localStorage.setItem('userid',signindata.email)
+                 alert(`${signindata.email} signed in sucessfully`)
+                navigate("/listproperty")
+            }
+            
+         
+
         }).catch((err) => {
-            console.log(err)
+            alert(err.response.data)
+            if(err.response.data==="email not exist please signup"){
+                navigate("/signup")
+            }
+          
         })
 
     }
 
     return (
-        <div className="container">
-            <h1>Logo</h1>
-            <p>Enter your credentials to access your account </p>
+        <div className="logincontainer">
+            <div className="logbox">
+            <h1 className="logologin">Logo</h1>
+            <p  className="paragraph2">Enter your credentials to access your account </p>
             {/* <form > */}
                 <div>
-                <input className="password-field" placeholder="Email ID" type="text" onChange={(e) => { setSignindata({ ...signindata, email: e.target.value }) }} />
+                <input className="logininput1" placeholder="Email ID" type="text" onChange={(e) => { setSignindata({ ...signindata, email: e.target.value }) }} />
                 </div>
                 <div className="input-wrapper">
-                <input  className="password-field"placeholder="Password" type={visibility?"text":"password"} onChange={(e) => { setSignindata({ ...signindata, password: e.target.value }) }} />
+                <input  className="logininput2"placeholder="Password" type={visibility?"text":"password"} onChange={(e) => { setSignindata({ ...signindata, password: e.target.value }) }} />
                 <button className="btn" onClick={toggleBtn}>{
-                visibility?<AiOutlineEyeInvisible/>:<AiOutlineEye/>
+                visibility?<AiOutlineEye/>:<AiOutlineEyeInvisible/>
                 }</button>
+                </div>
+                <button className="signin" onClick={handleLogin}>Sign In</button>
+                <p className="mukku" onClick={naviSignup}>Sign up</p>
                 </div>
                 
              {/* </form> */}
-             <button onClick={handleLogin}>Sign in</button>
-             
-             
-            <p onClick={naviSignup}>Sign up</p>
+             <div className="pandu">
+             <span >Don't have an account?</span>
+             <p className="blue" onClick={naviSignup}>Sign up</p>
+             </div>
+           
         </div>
     )
 }

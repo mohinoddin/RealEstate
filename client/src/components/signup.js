@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from 'axios'
 import { useNavigate } from "react-router-dom"
+import './signup.css'
 
 
 const Signup = () => {
@@ -20,38 +21,40 @@ const Signup = () => {
                 data: signupData
             }).then((res) => {
                 console.log(res)
+                
+     alert(res.data)
                 navigate("/")
             }).catch((err) => {
+                alert(err.response.data)
                 console.log(err)
             })
         } else {
             alert("pasword and confirmpassword should be same")
         }
     }
-    const navisignin=()=>{
+    const navisignin = () => {
         navigate("/")
     }
     return (
-        <div className="container">
+        <div className="signupcontainer">
             <div className="box">
-                <h1>Logo</h1>
-                <p>Create New Account</p>
+                <h1 className="logo">Logo</h1>
+                <p className="para">Create New Account</p>
                 <form>
                     <div id="email">
-                        <input type="text" placeholder="Email ID" onChange={(e) => { setSignupData({ ...signupData, email: e.target.value }) }} />
+                        <input className="signup-input" type="text" placeholder="Email ID" onChange={(e) => { setSignupData({ ...signupData, email: e.target.value }) }} />
                     </div>
                     <div id="password">
-                        <input type="password" placeholder="Password" id="password" onChange={(e) => { setSignupData({ ...signupData, password: e.target.value }) }} />
+                        <input className="signup-input" type="password" placeholder="Password" id="password" onChange={(e) => { setSignupData({ ...signupData, password: e.target.value }) }} />
                     </div>
                     <div id="confirmpassword">
-                        <input type="password" placeholder=" confirm password" id=" confirm password" onChange={(e) => { setSignupData({ ...signupData, confirmpassword: e.target.value }) }} />
+                        <input className="signup-input" type="password" placeholder=" Confirm password" id=" confirm password" onChange={(e) => { setSignupData({ ...signupData, confirmpassword: e.target.value }) }} />
                     </div>
                 </form>
-                <button onClick={handleSignup}>Sign Up</button>
+                <button className="sign"onClick={handleSignup}>Sign Up</button>
             </div>
-            <p onClick={navisignin}>Sign-in</p>
+            <p className="foot" onClick={navisignin}>Sign-in</p>
         </div>
-
     )
 }
 export default Signup

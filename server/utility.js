@@ -14,7 +14,6 @@ const checkExistinguser = async (email) => {
     return existinguser
 };
 
-
 const generatePasswordHash = (password) => {
     console.log(password)
     const salt = 10;
