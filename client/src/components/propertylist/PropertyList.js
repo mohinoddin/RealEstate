@@ -6,7 +6,6 @@ import {AiFillEye} from 'react-icons/ai';
 import {MdEdit} from 'react-icons/md';
 const PropertyList = ( {propertydetails} )=>{
 
-     
   // const [property, setProperty] = useState([]);
 
   // useEffect(() => {
@@ -26,10 +25,8 @@ const PropertyList = ( {propertydetails} )=>{
         <>
         <div className='propertycontainer'>
        
-   
-       <table  >
-       <thead>
-        
+       <table>
+       <thead>     
         <tr className='tablehead' >
             <th className="thtext ppdidhead">PPD Id</th>
         
@@ -50,10 +47,7 @@ const PropertyList = ( {propertydetails} )=>{
             <th className="thtext actiontxt">Action</th>
         </tr>
         </thead>
-
-       
-
-         
+                
         {propertydetails.map((propertydata) => (
           <tbody>
           <tr className='tabledata'>
@@ -64,28 +58,18 @@ const PropertyList = ( {propertydetails} )=>{
         <td className="tdtext tdmobile">{propertydata.mobile}</td>
         <td className="tdtext">{propertydata.totalArea}</td>
         <td className="tdtext">{propertydata.views}</td>
-        <td className="tdtext">{propertydata.Status}</td>
+        <td className="tdtext tdstatus" style={soldstyle}>{propertydata.Status}</td>
         <td className="tdtext">{propertydata.daysLeft}</td>
         <td className="tdtext">
 
           <div className="actionbtn">
-
           <AiFillEye />
           <MdEdit />
-          </div>
-          
-          
-          
+          </div>               
           </td>
         </tr>
         </tbody>
-      ))}
-     
-     
-     
-
-
-       
+      ))}      
        </table>
        </div>
        
@@ -93,3 +77,10 @@ const PropertyList = ( {propertydetails} )=>{
     )
 }
 export default PropertyList
+
+
+const soldstyle={
+  color: '#416899',
+  background: '#F5FAF5',
+
+}
