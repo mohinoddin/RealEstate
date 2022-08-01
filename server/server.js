@@ -78,7 +78,7 @@ app.post('/addnewproperty', (req, res) => {
     })
     newProperty.save().then((data) => {
         console.log('Property Added')
-        //res.redirect('http://localhost:3000/getProperty/');
+        res.send('Property Added');
     }).catch(err => console.log(err));
 });
 
