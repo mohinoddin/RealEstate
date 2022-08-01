@@ -31,6 +31,8 @@ const Signin = () => {
             },
             data: signindata
         }).then((data) => {
+            
+            navigate("/listproperty")
             console.log(data)
             localStorage.setItem("authorization", data.data.authToken);
     

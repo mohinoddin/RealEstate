@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const property=require("./routes/property")
 
-const cors=require("cors")
+
 
 
 const signupModal = require("./models/signup-Modal");
@@ -14,6 +14,14 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs")
 require('dotenv').config(); //for setting environment variables on server
 
+const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions))
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
@@ -35,7 +43,7 @@ app.post('/addnewproperty', (req, res) => {
         propertyDiscription: req.body.propertyDiscription,
         negotiable: req.body.negotiable,
         ownership: req.body.ownership,
-        propertApproved: req.body.propertApproved,
+        propertyApproved: req.body.propertApproved,
         bankLoan: req.body.bankLoan,
         length: req.body.length,
         breadth: req.body.breadth,
@@ -68,8 +76,9 @@ app.post('/addnewproperty', (req, res) => {
         Status: "Unsold", // default is unsold
         daysLeft: 10, //Defalt is 10
     })
-    newProperty.save().then(() => {
-        res.send('property added');
+    newProperty.save().then((data) => {
+        console.log('Property Added')
+        res.redirect('http://localhost:3000/addproperty/listporperty');
     }).catch(err => console.log(err));
 });
 
