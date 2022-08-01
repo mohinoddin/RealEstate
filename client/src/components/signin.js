@@ -27,15 +27,18 @@ const Signin = () => {
             url: "http://localhost:3001/signin",
             method: "POST",
             headers: {
+                
 
             },
             data: signindata
-        }).then((data) => {
-            localStorage.setItem("authorization", data.data.authToken);
+        }).then((data) => {       
             if(data.data.authToken.length>0){
-            navigate("/listproperty")
+                localStorage.setItem("authorization", data.data.authToken);
+                navigate("/listproperty")
             }
-    
+            
+            console.log(data)
+
         }).catch((err) => {
             console.log(err)
         })
