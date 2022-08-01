@@ -30,12 +30,12 @@ const Signin = () => {
 
             },
             data: signindata
-        }).then((res) => {
-            
-            localStorage.setItem("authorization", res.data.authToken);
-            if(res.data.authToken.length>0){
-                alert(`${signindata.email} signed in sucessfully`) 
-                  
+        }).then((data) => {       
+
+            if(data.data.authToken.length>0){
+                localStorage.setItem("authorization", data.data.authToken);
+                 localStorage.setItem('userid',signindata.email)
+                 alert(`${signindata.email} signed in sucessfully`)
                 navigate("/listproperty")
             }
             
