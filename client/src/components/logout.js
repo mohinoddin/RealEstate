@@ -3,7 +3,8 @@ import {  useNavigate } from "react-router-dom"
 const Logout=()=>{
     const nav=useNavigate()
     const logoutHandle=()=>{
-localStorage.setItem("authorization","")
+        localStorage.clear()
+// localStorage.setItem("authorization","")
  nav("/")
     }
 
