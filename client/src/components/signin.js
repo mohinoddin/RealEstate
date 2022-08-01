@@ -31,14 +31,16 @@ const Signin = () => {
 
             },
             data: signindata
-        }).then((data) => {
-            localStorage.setItem("authorization", data.data.authToken);
-            localStorage.setItem('userid',signindata.email)
-            
+        }).then((data) => {       
+
             if(data.data.authToken.length>0){
-            navigate("/listproperty")
+                localStorage.setItem("authorization", data.data.authToken);
+                 localStorage.setItem('userid',signindata.email)
+                navigate("/listproperty")
             }
-    
+            
+            console.log(data)
+
         }).catch((err) => {
             console.log(err)
         })
