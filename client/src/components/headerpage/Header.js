@@ -8,8 +8,6 @@ const Header = ()=>{
     const userId = localStorage.getItem("userid");
     const userName= userId.split('@')[0]
 
-    console.log(userName)
-
     return(
         <>
 
@@ -24,13 +22,9 @@ const Header = ()=>{
        </div>
        </div>
        
-
        </div>
 
        <div className="headerbtmline"></div>
-
-
-       
 
         </>
     )

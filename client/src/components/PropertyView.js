@@ -14,18 +14,16 @@ const PropertyView = ()=>{
       const response = await fetch("http://localhost:3001/getProperty/",{
         headers: {
             authorization: authToken
-        }}); /////fetching data through server
-      console.log(response)
-      const data = await response.json(); /////converting fetched data to json file extention
+        }}); 
+      // console.log(response)
+      const data = await response.json(); 
       setProperty(data);
       // console.log(data);
     }
     fetchData()
   }, [authToken])
    
-  console.log(property)
-
-
+  //console.log(property)
 
     return(
         <>
@@ -40,12 +38,7 @@ const PropertyView = ()=>{
        </div>
 
        <div className="searchpart"><SearchRes property={property} /></div> 
-
-       
-       
-       
-       
-       
+      
        </div>
 
        </div>

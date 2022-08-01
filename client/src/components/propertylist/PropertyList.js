@@ -1,26 +1,9 @@
-// import React, { useState, useEffect } from 'react';
 import "./PropertyList.css"
 import {FaRegImages} from 'react-icons/fa'
 import {AiFillEye} from 'react-icons/ai';
-// import SearchRes from '../SerachRes';
 import {MdEdit} from 'react-icons/md';
 const PropertyList = ( {propertydetails} )=>{
 
-  // const [property, setProperty] = useState([]);
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const response = await fetch("http://localhost:3001/getProperty/"); /////fetching data through server
-  //     console.log(response)
-  //     const data = await response.json(); /////converting fetched data to json file extention
-  //     setProperty(data);
-  //     // console.log(data);
-  //   }
-  //   fetchData()
-  // }, [])
-   
-  // console.log(property)
-        
     return(
         <>
         <div className='propertycontainer'>

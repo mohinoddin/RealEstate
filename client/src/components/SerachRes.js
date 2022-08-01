@@ -4,8 +4,7 @@ import { BsSearch ,BsPlus} from "react-icons/bs";
 import AddProperty from "./addProperty/addProperty";
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
-// import axios from "axios";
-// import { useNavigate } from "react-router-dom";
+
 
 const SearchRes = ({property})=>{
   // const navigate = useNavigate()
@@ -15,17 +14,17 @@ const SearchRes = ({property})=>{
   const issubmitted= isEnabled && submitted
   const handleInputChange = (e) => {
     setAddInput(e.target.value )
-       console.log(e.target.value)
+       //console.log(e.target.value)
 }
 
-console.log({property})
+ // console.log({property})
   const [updatedproperty, setProperty] = useState([...property]);
 
   const handleDown=()=>{
     setSubmitted(false)
   }
    
-  console.log(updatedproperty)
+ // console.log(updatedproperty)
 
   const handleSearch = () => {
     // likecount=likecount+1
@@ -35,17 +34,11 @@ console.log({property})
       headers: {
         "content-type": "application/json"
       },
-     
-
     }).then(res =>
       res.json()).then(result =>{
         // console.log(result[0])
         setSubmitted(true)
-        
         setProperty(result)
-       
-       
-        
       }).catch(err => console.log(err))
        
         
@@ -57,20 +50,12 @@ console.log({property})
 
 <div className='seracharea'>
         
-        {/* <input type='text' className='searchbtn' placeholder='Search ppd id'></input> */}
- 
- 
- 
  <div class="searchbtn">
    <input type="text" placeholder="Search ppd id" className="isearch" name='id' id='id' onKeyDown={handleDown} onChange={(e) => { handleInputChange(e) }}/>
    <button type="submit" className="isearchbtn" disabled={!isEnabled} onClick={() => handleSearch()} ><BsSearch className="btncolor"/>
      
    </button>
  </div>
-        
-        {/* <button type='sumbit' className='addbtn' onClick={signup}> 
-        <BsPlus /> Add Property
-        </button> */}
         <Link to='/addproperty'><button type='sumbit' className='addbtn' onClick={AddProperty}> 
         <BsPlus /> Add Property
         </button></Link>
@@ -80,9 +65,6 @@ console.log({property})
         {/* <div className="propertylstpart"> <PropertyList propertydetails= {updatedproperty} /></div> */}
         
         </>
-        
-
-
     )
 }
 export default SearchRes
