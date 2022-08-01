@@ -84,7 +84,7 @@ app.post('/addnewproperty', (req, res) => {
 
 
 //starting the server
-app.listen(3001,(err)=>{
+app.listen(process.env.PORT || 3001,(err)=>{
     if(!err){
         console.log("server started")
     } else {

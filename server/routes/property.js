@@ -7,19 +7,11 @@ const signupModal = require("../models/signup-Modal");
 const  PropertyDetailsModel=require("../models/addPropertyModel");
 
 
-
-
-
 router.get("/", (req, res) => {
-
-    
-
 
     // PropertyDetailsModel.find().then((propertyData) => {
     //     res.status(200).send(propertyData)
     // })
-
-      
 
     if (req.headers.authorization) {
 
@@ -29,7 +21,7 @@ router.get("/", (req, res) => {
 
 
                 if (userData.length) {
-                    console.log(user_mail)
+                    // console.log(user_mail)
                              PropertyDetailsModel.find().then((propertyData) => {
                                const value= propertyData.reverse()
                         res.status(200).send(value)
@@ -51,29 +43,13 @@ router.get("/", (req, res) => {
         res.status(200).send("header is empty please add header")
     }
 
-
 })
 
 
 router.get("/search/:id", (req, res) => {
 
-// const {q}=req.query;
-// console.log(q.length)
-// if(q!==undefined || q.length!==0){
-//     PropertyDetailsModel.find({_id:q}).then((propertyData) => {
-//         res.status(200).send(propertyData)
-//     })
-
-// }else{
-//     console.log("error occured")
-// }
-
-
-
-
-
     PropertyDetailsModel.find({_id:req.params.id}).then((propertyData) => {
-        console.log(propertyData)
+        // console.log(propertyData)
         res.status(200).send(propertyData)
     }).catch(err=>{
         console.log("error occured")

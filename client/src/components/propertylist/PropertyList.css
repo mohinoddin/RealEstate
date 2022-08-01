@@ -92,8 +92,12 @@ margin-left: 10px;
 
 }
 
-.tdstatus{
+.tdstatus,.tddays{
     text-align: center;
+}
+
+.thdayleft{
+    margin-left: 25px;
 }
 
 .tablehead{
