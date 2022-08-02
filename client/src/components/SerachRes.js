@@ -29,7 +29,7 @@ const SearchRes = ({property})=>{
   const handleSearch = () => {
     // likecount=likecount+1
     // setLikeCount(likecount)
-    fetch(`http://localhost:3001/getProperty/search/${addinput}`, {
+    fetch(`https://realestate-backends.herokuapp.com/getProperty/search/${addinput}`, {
       method: "GET",
       headers: {
         "content-type": "application/json"
