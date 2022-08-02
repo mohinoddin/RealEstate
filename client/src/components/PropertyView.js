@@ -11,7 +11,7 @@ const PropertyView = ()=>{
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("http://localhost:3001/getProperty/",{
+      const response = await fetch("https://realestate-backends.herokuapp.com/getProperty/",{
         headers: {
             authorization: authToken
         }}); 

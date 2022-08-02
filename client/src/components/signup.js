@@ -14,7 +14,7 @@ const Signup = () => {
     const handleSignup = () => {
         if (signupData.password === signupData.confirmpassword && signupData.password.length > 0 && signupData.email.length>0 && (validator.isEmail(signupData.email))) {
             axios({
-                url: "http://localhost:3001/signup",
+                url: "https://realestate-backends.herokuapp.com/signup",
                 method: "POST",
                 headers: {
 
