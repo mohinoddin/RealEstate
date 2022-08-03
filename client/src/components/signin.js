@@ -21,6 +21,7 @@ const Signin = () => {
     const [signindata, setSignindata] = useState({ email:"", password:"" })
 
     const handleLogin = () => {
+        if(signindata.email.length){
         axios({
            
             url: "https://realestate-backends.herokuapp.com/signin",
@@ -45,6 +46,10 @@ const Signin = () => {
             }
         
         })
+
+    }else{
+        alert("email cann't be empty")
+    }
 
     }
 
