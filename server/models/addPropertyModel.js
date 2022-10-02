@@ -110,6 +110,11 @@ const addPropertySchema = mongoose.Schema({
         require: [true, "Please Select PPD Package Type"]
     },
     // Image uplaod to be added later
+    image:{
+        type:String
+        // required:true
+        
+    },
     email: {
         type: String,
         require: [true, "Please Add Email"]

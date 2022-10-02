@@ -1,8 +1,18 @@
 import "./PropertyList.css"
-import {FaRegImages} from 'react-icons/fa'
-import {AiFillEye} from 'react-icons/ai';
-import {MdEdit} from 'react-icons/md';
+//import {FaRegImages} from 'react-icons/fa'
+//import {AiFillEye} from 'react-icons/ai';
+//import {MdEdit} from 'react-icons/md';
+import Modal from "../Modals/Modal";
+import visible from '../../icons/visible.png';
+import images from '../../icons/showimage.png';
+import edit from '../../icons/edit.png';
+import { useState } from 'react'
+
+
 const PropertyList = ( {propertydetails} )=>{
+
+  const [isOpen,setIsOpen] = useState(false);
+  const [isImage,setIsImage]=useState("");
 
     return(
         <>
@@ -36,7 +46,7 @@ const PropertyList = ( {propertydetails} )=>{
           <tr className='tabledata'>
         {/* <td className="tdtext">{propertydata._id.substr(propertydata._id.length - 7)}</td> */}
         <td className="tdtext ppdidtxt">{propertydata._id}</td>
-        <td className="tdtext"><FaRegImages /></td>
+        <td className="tdtext property_column_two"><img src={images} width='16px' height='16px' alt="" onClick={()=>{setIsOpen(!isOpen);setIsImage(propertydata.image)}} className="image"/></td>
         <td className="tdtext">{propertydata.propertyType}</td>
         <td className="tdtext tdmobile">{propertydata.mobile}</td>
         <td className="tdtext">{propertydata.totalArea}</td>
@@ -46,13 +56,18 @@ const PropertyList = ( {propertydetails} )=>{
         <td className="tdtext">
 
           <div className="actionbtn">
-          <AiFillEye />
-          <MdEdit />
+          <img src={visible} width='16px' height='16px' alt=""/>
+          <img src={edit} width='16px' height='16px' alt=""/>
           </div>               
           </td>
         </tr>
         </tbody>
-      ))}      
+      ))}  
+      <Modal open={isOpen} onClose={()=>setIsOpen(!isOpen)}>
+                        <img src={isImage} style={{width:"500px",height:'400px',marginTop:'200px',borderRadius:'20.5px'}} alt="the property"/>
+                        {/* hello */}
+                    </Modal>
+
        </table>
        </div>
        

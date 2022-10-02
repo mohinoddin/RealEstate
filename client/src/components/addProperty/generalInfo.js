@@ -1,7 +1,10 @@
 import '../assets/styles/style.css';
+import Filebase64 from "react-file-base64";
 
+import { useState } from 'react'
 const GeneralInfo = ({formData, setFormData}) => {
 
+    const [name,setName]=useState(true);
     console.log(formData);
     const handleFormData = (e) => {
         const name = e.target.name;
@@ -62,6 +65,23 @@ const GeneralInfo = ({formData, setFormData}) => {
                     <option value='No'>No</option>
                 </select>
             </label><br/>
+
+
+            <div className="container-image">
+            
+          
+            <div  className="input-file">
+            <Filebase64
+                        id="fileimage"
+                        type="file"
+                        multiple={false}
+                        onDone={({base64}) => {setFormData({ ...formData,image: base64 });setName(!name)}}
+                        title="Add File"
+                        
+            />
+               {name?<div className="addphoto"><span className="image_name" >Add Photo</span></div>:null} 
+            </div>
+         </div>
         </form>
     )
 }

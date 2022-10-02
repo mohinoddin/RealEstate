@@ -64,6 +64,7 @@ app.post('/addnewproperty', (req, res) => {
         saleType: req.body.saleType,
         featuredPackage: req.body.featuredPackage,
         PPDPackage: req.body.PPDPackage,
+        image:req.body.image,
         email: req.body.email,
         city: req.body.city,
         area: req.body.area,

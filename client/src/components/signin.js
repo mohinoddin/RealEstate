@@ -1,8 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {AiOutlineEye,AiOutlineEyeInvisible} from "react-icons/ai"
+// import {AiOutlineEye,AiOutlineEyeInvisible} from "react-icons/ai"
 import "./signin.css"
+// import icon from '../icons/favicon.ico'
+import visible from '../icons/visible.png'
+import notVisible from '../icons/notvisible.png'
+
 
 
 const Signin = () => {
@@ -65,7 +69,8 @@ const Signin = () => {
                 <div className="input-wrapper">
                 <input  className="logininput2"placeholder="Password" type={visibility?"text":"password"} onChange={(e) => { setSignindata({ ...signindata, password: e.target.value }) }} />
                 <button className="btn" onClick={toggleBtn}>{
-                visibility?<AiOutlineEye/>:<AiOutlineEyeInvisible/>
+                visibility?<img src={visible} width='16px' height='16px' alt=""/>:
+                    <img src={notVisible} width='16px' height='16px' alt=""/>
                 }</button>
                 </div>
                 <button className="signin" onClick={handleLogin}>Sign In</button>

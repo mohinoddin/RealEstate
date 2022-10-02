@@ -45,6 +45,7 @@ const Form = () => {
         saleType: '',
         featuredPackage: '',
         PPDPackage: '',
+        image:'',
         email: '',
         city: '',
         area: '',

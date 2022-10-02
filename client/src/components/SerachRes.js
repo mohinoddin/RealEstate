@@ -1,10 +1,10 @@
 import "./propertylist/PropertyList.css"
 import PropertyList from "./propertylist/PropertyList";
-import { BsSearch ,BsPlus} from "react-icons/bs";
+//import { BsSearch ,BsPlus} from "react-icons/bs";
 import AddProperty from "./addProperty/addProperty";
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
-
+import search from '../icons/search.png'
 
 const SearchRes = ({property})=>{
   // const navigate = useNavigate()
@@ -52,12 +52,13 @@ const SearchRes = ({property})=>{
         
  <div class="searchbtn">
    <input type="text" placeholder="Search ppd id" className="isearch" name='id' id='id' onKeyDown={handleDown} onChange={(e) => { handleInputChange(e) }}/>
-   <button type="submit" className="isearchbtn" disabled={!isEnabled} onClick={() => handleSearch()} ><BsSearch className="btncolor"/>
+   <button type="submit" className="isearchbtn" disabled={!isEnabled} onClick={() => handleSearch()} >
+   <img src={search} width='16px' height='16px' alt="" className="btncolor"/>
      
    </button>
  </div>
         <Link to='/addproperty'><button type='sumbit' className='addbtn' onClick={AddProperty}> 
-        <BsPlus /> Add Property
+        + Add Property
         </button></Link>
         </div>
         

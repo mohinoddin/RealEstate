@@ -14,7 +14,7 @@ const PropertyView = ()=>{
       const response = await fetch("https://realestate-backends.herokuapp.com/getProperty/",{
         headers: {
             authorization: authToken
-        }}); 
+        }});
       // console.log(response)
       const data = await response.json(); 
       setProperty(data);
@@ -45,4 +45,5 @@ const PropertyView = ()=>{
         </>
     )
 }
+
 export default PropertyView

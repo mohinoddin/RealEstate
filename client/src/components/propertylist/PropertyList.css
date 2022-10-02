@@ -164,3 +164,17 @@ column-gap: 1px;
 }
 
 
+.property_column_two .image{
+    font-size: 1.5em;
+    color: gray;
+}
+.image:hover{
+    cursor: pointer;
+    background-color: rgb(156, 241, 156);
+
+}
+.image:active{
+    color: red;
+
+}
+
